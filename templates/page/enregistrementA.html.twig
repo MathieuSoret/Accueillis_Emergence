@@ -4,13 +4,35 @@
 
 {% block body %}
   <div class="container mt-4" >
-    <center><h1>Menu Principal</h1></center>
-    <form class="form-inline my-2 my-lg-0">
-         
-            
-        
-    <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
- 
-    </form>
+    <center><h1>Enregistrement</h1></center>
+    
+    <p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">État Civil</a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Sitaution Acteulle</button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample3">Anciennes situations</button>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      </div>
+    </div>
   </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+        ca
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+      marche      
+    </div>
+    </div>
+  </div>
+</div>
+      
 {% endblock %}
