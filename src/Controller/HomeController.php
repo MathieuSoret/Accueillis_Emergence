@@ -6,7 +6,7 @@ use Symfony \Component \Routing \Annotation \Route;
 
 use Twig \ Environment;
 
-class HomeController
+class HomeController 
 {
     /**
      * @var Environment
@@ -20,7 +20,7 @@ class HomeController
     }
 
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="acceuil")
      * @return Response
      */
 
