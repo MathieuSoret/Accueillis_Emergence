@@ -6,17 +6,13 @@
     </div class="container mt-4">
 
 
-        {% if error %}
-            <div class="alert alert-danger">
-                {{ error.messageKey | trans(error.messagedata, 'security') }}
-            </div>
-        {% endif %}
+        
 
 
-        <form action="{{ path('login') }}" method="post">
+        
             <div class=form-group"">
                 <label for="username">Nom de l'utilisateur</label>
-                <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}">
+                <input type="text" id="username" name="_username" class="form-control" value="">
             </div>
 
             <div class=form-group"">
@@ -26,7 +22,7 @@
 
             <br>
             <button type="submit" class="btn btn-primary">Se connecter</button>
-        </form>
+        
 
     </div>
 {% endblock %}
