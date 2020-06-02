@@ -9,7 +9,7 @@ class PropertyController extends AbstractController
 {
 
     /**
-     * @Route("/gestion", name="gestion")
+     * @Route("/gestion", name="gestion.index")
      * @return Response
      */
     public function index(): Response
