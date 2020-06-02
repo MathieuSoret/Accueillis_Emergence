@@ -21,12 +21,12 @@ class PropertyController
     }
 
     /**
-     * @Route("/Enregistrement", name="index.html.twig")
+     * @Route("/Enregistrement", name="enregistrementA")
      * @return Response
      */
     public function index(): Response
     {
-        return new Response($this->twig->render('page/index.html.twig'));;
+        return new Response($this->twig->render('page/enregistrementA.html.twig'));;
     }
 
 }
