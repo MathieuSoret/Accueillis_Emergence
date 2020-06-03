@@ -6,5 +6,63 @@
     <div class="container mt-4" >
         <center><h1>Enregistrement d'une Session</h1></center><br>
         <center><h2>Une session est une activité à une date donnée</h2></center>
+        
+                
+            
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">
+                            </label>Choisir l'activité de la session</label><br>
+                            </label>Choisir la date de la session</label><br>
+                            </label>Valider</label>
+                        </th>
+                        <th scope="col">
+                            <form>
+                                <select name="nom" size="1">
+                                    <option> Halte du matin </option>
+                                    <option> Repas du midi </option>
+                                    <option> Halte du jour </option>
+                                    <option> Domiciliation </option>
+                                    <option> Bagagerie  </option>
+                                    <option> Acceuil de famille </option>
+                                    <option> Nuitée </option>
+                                    <option> Cinéma </option>
+                                    <option> Piscine </option>
+                                    <option> Sortie </option>
+                                </select>
+                            </form>
+                        </th>
+                        <th scope="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class='col-sm-6'>
+                                        <div class="form-group">
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $('#datetimepicker1').datetimepicker();
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <button type="button" class="btn btn-success">valider</button>
+                        </th>
+                        <th scope="col">
+                            <button type="button" class="btn btn-danger">retour</button>
+                        </th>
+                        </tr>
+                    </thead>
+                <table>
+            
     </div>
 {% endblock %}

@@ -26,7 +26,7 @@ class PropertyController
      */
     public function index(): Response
     {
-        return new Response($this->twig->render('page/enregistrementA.html.twig'));;
+        return new Response($this->twig->render('page/enregistrementA.html.twig'));
     }
 
 }

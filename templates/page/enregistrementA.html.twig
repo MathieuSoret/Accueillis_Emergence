@@ -5,33 +5,46 @@
 {% block body %}
   <div class="container mt-4" >
     <center><h1>Enregistrement</h1></center>
-    
-  <! -- ici c'est le menu déroulant pour choisir la personne -->
-  <FORM><button type="button" class="btn btn-success" href="#">Nouvel acceuilli</button>
-    <SELECT name="nom" size="1">
-      <OPTION>Mathieu
-      <OPTION>Mathis
-    </SELECT>
-  </FORM>
+
   
-  
-  <br><br>
-
-  <! -- ici c'est le menu déroulant ou on affiche le sexe -->
-  <FORM>
-    <SELECT name="nom" size="1">
-      <OPTION>monsieur
-      <OPTION>madame
-      <OPTION>enfant
-    </SELECT>
-    <label>afficher le nom</label>
-    <label>/afficher le prénom</label>
-  </FORM>
-
-  <br><br>
-
-  <button type="button" class="btn btn-danger" href="#">Retour à la page d'acceuil</button>
-  <br><br>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">
+      <FORM>
+        <SELECT name="nom" size="1">
+          <OPTION>Mathieu
+          <OPTION>Mathis
+        </SELECT>
+      </FORM></th>
+      <th scope="col"><button type="button" class="btn btn-success" href="#">Nouvel acceuilli</button></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <FORM>
+          <SELECT name="nom" size="1">
+            <OPTION>monsieur
+            <OPTION>madame
+            <OPTION>enfant
+          </SELECT>
+        </FORM>
+      </th>
+      <td>
+        <label>afficher le nom</label>
+      </td>
+      <td>
+        <label>afficher le prénom</label>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" href="#">Retour à la page d'acceuil</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
     <! -- ici nous avons le collapse qui va nous permettre d'afficher l'état civil etc.....  -->
     <div id="accordion">
@@ -45,7 +58,7 @@
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            allez
+            . . .
           </div>
         </div>
       </div>
@@ -61,7 +74,7 @@
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-            je sais po
+            . . .
           </div>
         </div>
       </div>
@@ -77,7 +90,7 @@
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
-            au pif
+            . . .
           </div>
         </div>
       </div>
