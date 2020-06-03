@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Enregistrement Acceuillis' %}
+
+{% block body %}
+  <div class="container mt-4" >
+    <center><h1>Enregistrement d'une famille</h1></center>
+  
+    <br><br><br>
+        <label> Une famille est repérée par le nom d'un de ses membres.</label>
+        <label> Chaque membre est repéé par son nom, son prénom et sa date de naissance à cause des homonymies.</label>
+        <label> Sélectionner une famille ou cliquer sur Nouvelle Famille.</label><br><br>
+    <FORM>
+        <SELECT name="nom" size="1">
+            <option> nom de famille </option>
+        </SELECT>
+    </FORM>
+    <br>
+    <button type="button" class="btn btn-success" href="#">Nouvelle Famille</button>
+  </div>
+      
+{% endblock %}

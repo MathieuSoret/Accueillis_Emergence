@@ -26,7 +26,7 @@ class HomeController
 
     public function index(): Response
     {
-        return new Response($this->twig->render('page/acceuil.html.twig'));
+        return new Response($this->twig->render('page/enregistrementF.html.twig'));
     }
 
 }
