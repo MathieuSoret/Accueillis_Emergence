@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title 'Enregistrement Acceuillis' %}
+{% block title "Enregistrement d'une famille" %}
 
 {% block body %}
   <div class="container mt-4" >
@@ -46,22 +46,30 @@
                     <button type="button" class="btn btn-success" href="#">Nouveau membre</button>
                     <button type="button" class="btn btn-success" href="#">Saisir nouvel acceuilli</button><br><br>
 
-                    <form>
-                        <select name="nom" size="1">
-                            <option> nom d'un membre de la famille </option>
-                        </select>
-                    </form><br>
-                    <form>
-                        <select name="nom" size="1">
-                            <option> Fille </option>
-                            <option> Fils </option>
-                            <option> Grand-mère </option>
-                            <option> Grand-père </option>
-                            <option> Membre </option>
-                            <option> Mère </option>
-                            <option> Père </option>
-                        </select>
-                    </form>
+                    <label>Nom/Prenom de l'acceuilli</label><br>
+
+                    <input list="Acceuilli" id="acceuilli" name="acceuilli" />
+
+                    <datalist id="Acceuilli">
+                        <OPTION value="Mathieu">
+                        <OPTION value="Mathis">
+                        <OPTION value="Jean">
+                        <OPTION value="Paul">
+                    </datalist><br><br>
+
+
+                    <label>Genre</label><br>
+                    <input list="Genre" id="genre" name="genre" />
+
+                    <datalist id="Genre">
+                        <OPTION value="Fille">
+                        <OPTION value="Fils">
+                        <OPTION value="Grand-mère">
+                        <OPTION value="Grand-père">
+                        <OPTION value="Membre">
+                        <OPTION value="Mère">
+                        <OPTION value="Père">
+                    </datalist><br><br>
 
                     <label>Si le nom du nouveau membre est introuvable</label><br>
                     <label>Cliquer sur Annuler</label><br>
@@ -75,10 +83,10 @@
 
                 <td>
                     <label for="tentacles">Adultes:</label>
-                    <input type="number" id="tentacles" name="tentacles"><br>
+                    <input type="number" id="tentacles" name="tentacles" min="0"><br>
 
                     <label for="tentacles">Enfants:</label>
-                    <input type="number" id="tentacles" name="tentacles"><br>
+                    <input type="number" id="tentacles" name="tentacles"min="0"><br>
 
                     <button type="button" class="btn btn-success">Actualiser</button>
                 </td>

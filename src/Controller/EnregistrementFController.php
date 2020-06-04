@@ -10,7 +10,7 @@ class EnregistrementFController extends AbstractController
 
 
     /**
-     * @Route("/EnregistrementF", name="page.enregistrementF")
+     * @Route("/Enregistrement Famille", name="page.enregistrementF")
      * @return Response
      */
     public function index(): Response

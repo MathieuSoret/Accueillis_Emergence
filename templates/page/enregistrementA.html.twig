@@ -12,12 +12,18 @@
     <tr>
       <th scope="col"></th>
       <th scope="col">
-      <FORM>
-        <SELECT name="nom" size="1">
-          <OPTION>Mathieu
-          <OPTION>Mathis
-        </SELECT>
-      </FORM></th>
+
+
+      <label>Information de l'acceuilli :</label><br>
+      <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+      <datalist id="ice-cream-flavors">
+          <option value="Mathis">
+          <option value="Mathieu">
+      </datalist>
+      
+      
+      </th>
       <th scope="col"><button type="button" class="btn btn-success" href="#">Nouvel acceuilli</button></th>
       <th scope="col"></th>
     </tr>
@@ -25,26 +31,45 @@
   <tbody>
     <tr>
       <th scope="row">
-        <FORM>
-          <SELECT name="nom" size="1">
-            <OPTION>monsieur
-            <OPTION>madame
-            <OPTION>enfant
-          </SELECT>
-        </FORM>
+
+        <label>Genre</label><br>
+        <input list="genre" id="Genre" name="Genre" />
+
+        <datalist id="genre">
+           <OPTION value="monsieur">
+           <OPTION value="madame">
+           <OPTION value="enfant">
+        </datalist>
+
       </th>
       <td>
-        <label>afficher le nom</label>
+      <label>Nom de l'acceuilli :</label><br>
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Nom ">
+            </div>
+          </div>
+        </form>
       </td>
       <td>
-        <label>afficher le prénom</label>
+      <label>Prénom de l'acceuilli :</label><br>
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Prénom ">
+            </div>
+          </div>
+        </form>
       </td>
       <td>
-        <button type="button" class="btn btn-danger" href="#">Retour à la page d'acceuil</button>
+        
       </td>
     </tr>
   </tbody>
 </table>
+
+
 
     <! -- ici nous avons le collapse qui va nous permettre d'afficher l'état civil etc.....  -->
     <div id="accordion">
@@ -58,12 +83,114 @@
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            . . .
+
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>
+                    <label>Date de Naissance : jj/mm/AAAA</label>
+                  </td>
+                  <td>
+                    <label>Ville de naissance :</label>
+                    <form>
+                      <div class="form-row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Ville">
+                        </div>
+                    </form>
+                  </td>
+                  <td>
+
+                    <label>Sexe</label><br>
+                    <input list="Sexe" id="sexe" name="sexe" />
+
+                    <datalist id="Sexe">
+                        <OPTION value="M">
+                        <OPTION value="F">
+                    </datalist>
+
+
+                  </td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label>Nationalité :</label><br>
+
+                    <input list="Nationalité" id="nationalité" name="nationalité" />
+
+                    <datalist id="Nationalité">
+                        <option value="France">
+                        <option value="Japon">
+                    </datalist>
+
+                  </td>
+                  <td>
+                    <label>Age de l'acceuilli:</label>
+                    <form>
+                      <div class="form-row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Age">
+                        </div>
+                    </form>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                        Isolé ?
+                      </label>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label>Date d'arrivée en France</label>
+                  </td>
+                  <td></td>
+                  <td>
+                    <button type="button" class="btn btn-success">Valider</button>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label>Prescripteur</label><br>
+
+                    <input list="Prescripteur" id="prescripteur" name="prescripteur" />
+
+                    <datalist id="Prescripteur">
+                        <OPTION value="115">
+                        <OPTION value="Autre">
+                        <OPTION value="CCAS">
+                        <OPTION value="Connaissance">
+                        <OPTION value="Foyer d'Urgence">
+                        <OPTION value="Maraude Emergence">
+                        <OPTION value="Maraude Partenaire">
+                        <OPTION value="Inconnu">
+                    </datalist>
+
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
         </div>
       </div>
 
 
+
+
+
+      <! -- ici nous avons le collapse qui va nous permettre d'afficher la situation actuelle d'un acceuilli etc.....  -->
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
@@ -74,12 +201,173 @@
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-            . . .
+            
+
+            <table class="table">
+              <tbody>
+
+                <tr>
+                  <td>
+                    <label>Ressources</label><br>
+
+                      <input list="Ressources" id="ressources" name="ressources" />
+
+                    <datalist id="Ressources">
+                        <OPTION value="DA">
+                        <OPTION value="DEMANDE DE TITRE DE SEJOUR 5 OU 10 ANS">
+                        <OPTION value="DEMANDE DE TITRE DE SEJOUR MALADIE">
+                        <OPTION value="DEMANDEUR D'ASILE DUBLIN">
+                        <OPTION value="DROIT COMMUN + CARTE/TITRE DE SEJOUR">
+                        <OPTION value="DROIT COMMUN + CNI">
+                        <OPTION value="INCONNUE">
+                        <OPTION value="OQTF">
+                        <OPTION value="RECONNU REFUGIE">
+                        <OPTION value="REFUGIE">
+                        <OPTION value="RESSORTISSANT EUROPEEN">
+                        <OPTION value="SANS TITRE DE SEJOUR">
+                        <OPTION value="VISA ETUDIANT">
+                    </datalist>
+
+                    <br><br>
+                    <input list="Ressources2" id="ressources2" name="ressources2" />
+
+                    <datalist id="Ressources2">
+                        <OPTION value="A.T.A.">
+                        <OPTION value="AAH">
+                        <OPTION value="ADA">
+                        <OPTION value="ARE">
+                        <OPTION value="ASSEDIC">
+                        <OPTION value="ATTENTE PREMIER VERSEMENT DU RSA">
+                        <OPTION value="AUTRES">
+                        <OPTION value="FORM STAGE">
+                        <OPTION value="GARANTIE JEUNE">
+                        <OPTION value="INCONNUES">
+                        <OPTION value="INTERMITANT DU SPECTACLE">
+                        <OPTION value="RETRAITE/PENSION">
+                        <OPTION value="RSA">
+                        <OPTION value="SALAIRE">
+                        <OPTION value="SANS RESSOURCES">
+                        <OPTION value="SANS RESSOURCES NON ÉLIGIBLE">
+                      </datalist>
+                    
+                  </td>
+                  <td>
+                    
+                    <label>Hébergement</label><br>
+
+                    <input list="Hébergement" id="hébergement" name="hébergement" />
+
+                    <datalist id="Hébergement">
+                        <OPTION value="Autres">
+                        <OPTION value="CADA">
+                        <OPTION value="Caravane">
+                        <OPTION value="Chambre meublé">
+                    </datalist>
+
+                    <br>
+                    <label>Domiciliation</label><br>
+
+                    <input list="Domiciliation" id="domiciliation" name="domiciliation" />
+
+                    <datalist id="Domiciliation">
+                        <OPTION value="Adoma">
+                        <OPTION value="Autre">
+                        <OPTION value="Casous">
+                        <OPTION value="CCAS indre et Loire">
+                    </datalist>
+
+
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                        Actuel
+                      </label>
+                    </div><br>
+                    <button type="button" class="btn btn-secondary">Nouvelle Situation</button><br><br>
+                    <button type="button" class="btn btn-warning">Annuler</button>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label>Protection</label>
+                    <FORM>
+                        <SELECT name="protection" size="1">
+                          <OPTION>Curatelle
+                          <OPTION>Non
+                          <OPTION>Tutelle
+                        </SELECT>
+                      </FORM>
+
+                      <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                        Suivi Social
+                      </label>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td>
+                    <button type="button" class="btn btn-success">Valider</button>
+                  </td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label>Droit à la sante</label>
+                    <FORM>
+                        <SELECT name="Droit à la santé" size="1">
+                          <OPTION>Ame
+                          <OPTION>Cmu
+                          <OPTION>Cmu complémentaire
+                          <OPTION>sans
+                        </SELECT>
+                      </FORM>
+
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                        mobilité Réduite
+                      </label>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn-dark">Animal de compagnie</button>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Observation</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+
           </div>
         </div>
       </div>
 
 
+
+
+
+
+      <! -- ici nous avons le collapse qui va nous permettre d'afficher l'ancienne situation des acceuilli etc.....  -->
       <div class="card">
         <div class="card-header" id="headingThree">
           <h5 class="mb-0">
@@ -91,6 +379,10 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
             . . .
+
+
+
+
           </div>
         </div>
       </div>
