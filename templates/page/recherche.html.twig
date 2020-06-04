@@ -5,7 +5,33 @@
 {% block body %}
 
     <div class="container mt-4" >
-        <center><h1>Statistique sur une période</h1></center>
+        <center><h1>Statistique sur une période</h1></center><br><br>
+
+        <table class="table">
+            <thead>
+                <th scope="col">Date de début</th>
+                <th scope="col">
+                    <form>
+                        <div class="nativeDatePicker">
+                             <input type="date" id="bday" name="bday">
+                             <span class="validity"></span>
+                        </div>
+                     </form>
+                </th>
+                <th scope="col">Date de fin</th>
+                <th scope="col">
+                <form>
+                        <div class="nativeDatePicker">
+                             <input type="date" id="bday" name="bday">
+                             <span class="validity"></span>
+                        </div>
+                    </form>
+                
+                </th>
+                <th scope="col"><button type="button" class="btn btn-success">valider</button></th>
+            </thead>
+        </table>
+
     </div>
 
 {% endblock %}

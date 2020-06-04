@@ -39,25 +39,14 @@
 
                         </th>
                         <th scope="col">
-                            <div class="container">
-                                <div class="row">
-                                    <div class='col-sm-6'>
-                                        <div class="form-group">
-                                            <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <script type="text/javascript">
-                                        $(function () {
-                                            $('#datetimepicker1').datetimepicker();
-                                        });
-                                    </script>
+                            <form>
+                                <div class="nativeDatePicker">
+                                <label for="bday">Veuillez saisir votre date  :</label><br>
+                                <input type="date" id="bday" name="bday">
+                                <span class="validity"></span>
                                 </div>
-                            </div>
+                                </div>
+                            </form>
                         </th>
                         <th scope="col">
                             <button type="button" class="btn btn-success">valider</button>
