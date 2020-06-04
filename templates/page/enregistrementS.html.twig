@@ -68,6 +68,43 @@
                         </tr>
                     </thead>
                 <table>
+
             
+            <label>Pour inscrir un nouveau participant, il faut :</label><br>
+            <label>Cliquez sur le bouton "nouveau participant"</label><br>
+            <label>Choisir le participant</label><br>
+            <label>Cliquez sur le bouton "Valider"</label><br>
+            <label>Si le participant est déja inscrit à cette session, un<br>message d'erreur apparaîtra.</label><br>
+            <label>le cadreci-contre liste les participants déjà inscrits</label><br><br>
+
+            <button type="button" class="btn btn-secondary">Nouveau Participant</button><br><br>
+
+            <label>Recherche par Nom</label><br>
+            <input list="Nom" id="nom" name="nom" />
+
+                    <datalist id="Nom">
+                        <OPTION value="Mathieu">
+                        <OPTION value="Mathis">
+                        <OPTION value="Jean">
+                        <OPTION value="Paul">
+                    </datalist><br>
+
+            
+
+
+
+            <label>Recherche par Prénom</label><br>
+            <input list="Acceuilli" id="acceuilli" name="acceuilli" />
+
+                    <datalist id="Acceuilli">
+                        <OPTION value="Soret">
+                        <OPTION value="Bidul">
+                        <OPTION value="Truc">
+                    </datalist><br><br>
+            <div class="btn-toolbar">
+                <button type="button" class="btn btn-success">valider</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-secondary">Nouvel Acceuilli</button>
+            </div>
+
     </div>
 {% endblock %}

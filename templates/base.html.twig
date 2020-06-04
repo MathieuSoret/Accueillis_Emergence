@@ -8,8 +8,8 @@
 
         {% block stylesheets %}{% endblock %}
     </head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">EMERGENCE</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"><p class="text-white bg-dark p-2 rounded-pill">EMERGENCE<p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,16 +17,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ path('page.enregistrementA') }}">Enregistrement d'un acceuilli</a>
+                    <a class="nav-link" href="{{ path('page.enregistrementA') }}"><p class="text-dark bg-white p-2 rounded">Enregistrement d'un acceuilli</p></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ path('page.enregistrementF') }}">Enregistrement d'une famille</a>
+                    <a class="nav-link" href="{{ path('page.enregistrementF') }}"><p class="text-dark bg-white p-2 rounded">Enregistrement d'une famille</p></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ path('page.enregistrementS') }}">Enregistrement d'une session</a>
+                    <a class="nav-link" href="{{ path('page.enregistrementS') }}"><p class="text-dark bg-white p-2 rounded">Enregistrement d'une session</p></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ path('page.recherche') }}">Recherche</a>
+                    <a class="nav-link" href="{{ path('page.recherche') }}"><p class="text-dark bg-white p-2 rounded">Recherche</p></a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -34,7 +34,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
             </form>
         </div>
-        </nav>
+    </nav>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
