@@ -10,11 +10,16 @@
         <thead>
             <tr>
                 <th scope="col">
-                    <FORM>
-                        <SELECT name="nom" size="1">
-                            <option> nom de famille </option>
-                        </SELECT>
-                    </FORM>
+                    
+                    <input list="Nom" id="nom" name="nom" />
+
+                    <datalist id="Nom">
+                        <OPTION value="Mathieu">
+                        <OPTION value="Mathis">
+                        <OPTION value="Jean">
+                        <OPTION value="Paul">
+                    </datalist><br><br>
+
                     <br>
                     <button type="button" class="btn btn-success" href="#">Nouvelle Famille</button>
                 </th>
