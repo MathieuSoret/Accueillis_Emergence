@@ -7,16 +7,16 @@ use Symfony \Component \Routing \Annotation \Route;
 
 use Twig \ Environment;
 
-class AcceuilController extends AbstractController
+class AccueilController extends AbstractController
 {
     /**
-     * @Route("/", name="acceuil")
+     * @Route("/", name="accueil")
      * @return Response
      */
 
     public function index(): Response
     {
-        return $this->render('page/acceuil.html.twig');
+        return $this->render('page/accueil.html.twig');
     }
 
 }
