@@ -307,28 +307,30 @@
                   <td>
                     <label>Protection</label>
                     <FORM>
-                        <SELECT name="protection" size="1">
+                        <SELECT name="Protection" size="1">
                           <OPTION>Curatelle
                           <OPTION>Non
                           <OPTION>Tutelle
                         </SELECT>
-                      </FORM>
-
-                      <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Suivi Social
-                      </label>
-                    </div>
+                      </FORM> 
                   </td>
                   <td>
-                    <form><br>
-                      <div class="form-row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Suivi social ">
-                        </div>
+
+                      <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          Suivi Social
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseExample">
+                          <form>
+                            <div class="form-row">
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Suivi">
+                              </div>
+                            </div>
+                          </form>
                       </div>
-                    </form>
+
                   </td>
                   <td><br>
                     <button type="button" class="btn btn-success">Valider</button>
@@ -363,15 +365,23 @@
 
                 <tr>
                   <td><br>
-                    <button type="button" class="btn btn-dark">Animal de compagnie</button><br><br>
-
-                    <form>
-                      <div class="form-row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Quel animal ?">
+                    
+                    <p>
+                      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Animal de Compagnie
+                      </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                          <form>
+                            <div class="form-row">
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Quel animal ?">
+                              </div>
+                            </div>
+                          </form>
                         </div>
-                      </div>
-                    </form>
+                    
+                      
                   </td>
                   <td>
                     <div class="form-group">
