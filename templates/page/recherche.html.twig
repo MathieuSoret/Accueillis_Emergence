@@ -28,52 +28,80 @@
                     </form>
                 
                 </th>
-                <th scope="col"><button type="button" class="btn btn-success" name="valider">valider</button></th>
+                <th scope="col"><button type="button" class="btn btn-success" name="valider">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <link rel="stylesheet" media="all" title="style de la page" href="afficher_cacher_div.css" />
+                <script type="text/javascript" src="afficher_cacher_div.js"></script>
+                <span class="bouton" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Valider</span></button></th>
             </thead>
         </table>
 
         <br><br><br>
 
-  
 
-        <center><h2>Acccueillis</h2></center>
-        <table class="table">
-            <tbody>
-                <tr>
-                <td>
-                    <button type="button" class="btn btn-primary">Nombre par tranche d'age</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary">Nombre par Pays</button>
-                </td>
-                <td>
 
-                </td>
-                <td>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary">Sortie présents format excel</button>
-                </td>
-                </tr>
+            
+            <div id="texte" class="texte">
+                
+                <center><h2>Acccueillis</h2></center>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                        <td>
+                            <button type="button" class="btn btn-primary">Nombre par tranche d'age</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary">Nombre par Pays</button>
+                        </td>
+                        <td>
 
-                <tr>
-                <td>
-                    <button type="button" class="btn btn-primary">Nombre par zone géographique</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary">Participation par jour</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary">Nombre de passage par mois</button>
-                </td>
-                <td>
-                </td>
-                <td>
-                    <label>Le fichier résultat est dans C:\utilisateurs\Public\soluna\blian.xlsx</label>
-                </td>
-                </tr>
-            </tbody>
-            </table>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary">Sortie présents format excel</button>
+                        </td>
+                        </tr>
+
+                        <tr>
+                        <td>
+                            <button type="button" class="btn btn-primary">Nombre par zone géographique</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary">Participation par jour</button>
+                        </td>
+                        <td>
+                            <button type="button" type="button" class="btn btn-primary">Nombre de passage par mois</button>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <label>Le fichier résultat est dans C:\utilisateurs\Public\soluna\blian.xlsx</label>
+                        </td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+            </div>
+
+        <script>
+        function afficher_cacher(id)
+        {
+            if(document.getElementById(id).style.visibility=="visible")
+            {
+                document.getElementById(id).style.visibility="hidden";
+                document.getElementById('bouton_'+id).innerHTML='Valider';
+            }
+            else
+            {
+                document.getElementById(id).style.visibility="visible";
+                document.getElementById('bouton_'+id).innerHTML='Valider';
+            }
+            return true;
+        }
+        </script>
+
+        
 
     </div>
 

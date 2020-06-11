@@ -49,51 +49,82 @@
                             </form>
                         </th>
                         <th scope="col">
-                            <button type="button" class="btn btn-success">valider</button>
-                        </th>
-                        <th scope="col">
-                            <button type="button" class="btn btn-danger">retour</button>
+                            <button type="button" class="btn btn-success">
+                                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                                <link rel="stylesheet" media="all" title="style de la page" href="afficher_cacher_div.css" />
+                                <script type="text/javascript" src="afficher_cacher_div.js"></script>
+                                <span class="bouton" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Valider</span>
+                            </button>
                         </th>
                         </tr>
                     </thead>
                 <table>
 
-            
-            <label>Pour inscrir un nouveau participant, il faut :</label><br>
-            <label>Cliquez sur le bouton "nouveau participant"</label><br>
-            <label>Choisir le participant</label><br>
-            <label>Cliquez sur le bouton "Valider"</label><br>
-            <label>Si le participant est déja inscrit à cette session, un<br>message d'erreur apparaîtra.</label><br>
-            <label>le cadreci-contre liste les participants déjà inscrits</label><br><br>
-
-            <button type="button" class="btn btn-secondary">Nouveau Participant</button><br><br>
-
-            <label>Recherche par Nom</label><br>
-            <input list="Nom" id="nom" name="nom" />
-
-                    <datalist id="Nom">
-                        <OPTION value="Mathieu">
-                        <OPTION value="Mathis">
-                        <OPTION value="Jean">
-                        <OPTION value="Paul">
-                    </datalist><br>
-
-            
-            
 
 
-            <label>Recherche par Prénom</label><br>
-            <input list="Acceuilli" id="acceuilli" name="acceuilli" />
+            <div id="texte" class="texte" type="hidden">
 
-                    <datalist id="Acceuilli">
-                        <OPTION value="Soret">
-                        <OPTION value="Bidul">
-                        <OPTION value="Truc">
-                    </datalist><br><br>
-            <div class="btn-toolbar">
-                <button type="button" class="btn btn-success">valider</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="button" class="btn btn-secondary">Nouvel Accueilli</button>
+                <label>Pour inscrir un nouveau participant, il faut :</label><br>
+                <label>Cliquez sur le bouton "nouveau participant"</label><br>
+                <label>Choisir le participant</label><br>
+                <label>Cliquez sur le bouton "Valider"</label><br>
+                <label>Si le participant est déja inscrit à cette session, un<br>message d'erreur apparaîtra.</label><br>
+                <label>le cadreci-contre liste les participants déjà inscrits</label><br><br>
+
+                <button type="button" class="btn btn-secondary">Nouveau Participant</button><br><br>
+
+                <label>Recherche par Nom</label><br>
+                <input list="Nom" id="nom" name="nom" />
+
+                        <datalist id="Nom">
+                            <OPTION value="Mathieu">
+                            <OPTION value="Mathis">
+                            <OPTION value="Jean">
+                            <OPTION value="Paul">
+                        </datalist><br>
+
+                <label>Recherche par Prénom</label><br>
+                <input list="Acceuilli" id="acceuilli" name="acceuilli" />
+
+                        <datalist id="Acceuilli">
+                            <OPTION value="Soret">
+                            <OPTION value="Bidul">
+                            <OPTION value="Truc">
+                        </datalist><br><br>
+                <div class="btn-toolbar">
+                    <button type="button" class="btn btn-success">valider</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-secondary">Nouvel Accueilli</button>
+                </div>
+
             </div>
+
+
+
+            <script>
+            function afficher_cacher(id)
+            {
+                if(document.getElementById(id).style.visibility=="visible")
+                {
+                    document.getElementById(id).style.visibility="hidden";
+                    document.getElementById('bouton_'+id).innerHTML='Valider';
+                }
+                else
+                {
+                    document.getElementById(id).style.visibility="visible";
+                    document.getElementById('bouton_'+id).innerHTML='Valider';
+                }
+                return true;
+            }
+            </script>
+
+
+
+
+
+
+
+            
+            
 
     </div>
 {% endblock %}
