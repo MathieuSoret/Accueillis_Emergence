@@ -7,8 +7,8 @@
         <center><h1>Enregistrement d'une Session</h1></center><br>
         <center><h2>Une session est une activité à une date donnée</h2></center>
         
-                
-            
+
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -29,7 +29,7 @@
                             <OPTION value="Halte du jour">
                             <OPTION value="Domiciliation">
                             <OPTION value="Bagagerie">
-                            <OPTION value="Acceuil de famille">
+                            <OPTION value="Accueil de famille">
                             <OPTION value="Nuitée">
                             <OPTION value="Cinéma">
                             <OPTION value="Piscine">
@@ -62,43 +62,76 @@
 
 
 
-            <div id="texte" class="texte" type="hidden">
+            
+                
+            <table class="table">
+            <tbody>
+                <td>
+                
+                <div id="texte" class="texte">
 
-                <label>Pour inscrir un nouveau participant, il faut :</label><br>
-                <label>Cliquez sur le bouton "nouveau participant"</label><br>
-                <label>Choisir le participant</label><br>
-                <label>Cliquez sur le bouton "Valider"</label><br>
-                <label>Si le participant est déja inscrit à cette session, un<br>message d'erreur apparaîtra.</label><br>
-                <label>le cadreci-contre liste les participants déjà inscrits</label><br><br>
+                    <label>Pour inscrir un nouveau participant, il faut :</label><br>
+                    <label>Cliquez sur le bouton "nouveau participant"</label><br>
+                    <label>Choisir le participant</label><br>
+                    <label>Cliquez sur le bouton "Valider"</label><br>
+                    <label>Si le participant est déja inscrit à cette session, un<br>message d'erreur apparaîtra.</label><br>
+                    <label>le cadreci-contre liste les participants déjà inscrits</label><br><br>
 
-                <button type="button" class="btn btn-secondary">Nouveau Participant</button><br><br>
+                    <button type="button" class="btn btn-secondary">Nouveau Participant</button><br><br>
 
-                <label>Recherche par Nom</label><br>
-                <input list="Nom" id="nom" name="nom" />
+                    <label>Recherche par Nom</label><br>
+                    <input list="Nom" id="nom" name="nom" />
 
-                        <datalist id="Nom">
-                            <OPTION value="Mathieu">
-                            <OPTION value="Mathis">
-                            <OPTION value="Jean">
-                            <OPTION value="Paul">
-                        </datalist><br>
+                            <datalist id="Nom">
+                                <OPTION value="Mathieu">
+                                <OPTION value="Mathis">
+                                <OPTION value="Jean">
+                                <OPTION value="Paul">
+                            </datalist><br>
 
-                <label>Recherche par Prénom</label><br>
-                <input list="Acceuilli" id="acceuilli" name="acceuilli" />
+                    <label>Recherche par Prénom</label><br>
+                    <input list="Acceuilli" id="acceuilli" name="acceuilli" />
 
-                        <datalist id="Acceuilli">
-                            <OPTION value="Soret">
-                            <OPTION value="Bidul">
-                            <OPTION value="Truc">
-                        </datalist><br><br>
-                <div class="btn-toolbar">
-                    <button type="button" class="btn btn-success">valider</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button type="button" class="btn btn-success"><a href="{{ path('page.enregistrementA') }}"><font color="white">Nouvel Accueilli</font></a></button>
+                            <datalist id="Acceuilli">
+                                <OPTION value="Soret">
+                                <OPTION value="Bidul">
+                                <OPTION value="Truc">
+                            </datalist><br><br>
+                    <div class="btn-toolbar">
+                        <button type="button" class="btn btn-success">valider</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-success"><a href="{{ path('page.enregistrementA') }}"><font color="white">Nouvel Accueilli</font></a></button>
+                    </div>
+
                 </div>
+            </td>
+                <td></td>
+                <td></td>
+                <td>
+                <style>
+                    div.ex1 {
+                    background-color: lightgrey;
+                    width: 700px;
+                    height: 500px;
+                    overflow: scroll;
+                    }
+                </style>
 
-            </div>
-
-
+                <input type="button" onclick='window.location.reload(false)' value="Actualiser la liste de contrôle" class="btn btn-success"/>
+                <label for="tentacles">Nombre de participant  :</label>
+                <input type="number" id="tentacles" name="tentacles" min="0"><br>
+                <br><br>
+                <div class="ex1"><div class="container">
+                    <div class="row changingBG">
+                        <div class="col-lg-2">Qualite</div>
+                        <div class="col-lg-3">Nom </div>
+                        <div class="col-lg-3">Prénom</div>
+                        <div class="col-lg-4">Date de Naissance</div>
+                    </div>
+                    <!-- Ici nous devrons notez les personnes qui participe aux activités -->
+                </div>
+            </td>
+            </tbody>
+            </table>
 
             <script>
             function afficher_cacher(id)
