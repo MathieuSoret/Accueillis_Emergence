@@ -10,16 +10,7 @@ use Symfony \Component \Routing \Annotation \Route;
 class EnregistrementAController extends AbstractController
 {
 
-    /**
-     * @var TAccueillisRepository
-     */
-
-    private $repository;
-
-    public function __construct(TAccueillisRepository $repository)
-    {
-        $this->repository = $repository;
-    }
+    
 
     /**
      * @Route("/Enregistrement", name="page.enregistrementA")
@@ -27,8 +18,6 @@ class EnregistrementAController extends AbstractController
      */
     public function index(): Response
     {
-        $property = $this->repository->fond(1);
-        dump($property);
         return $this->render('page/enregistrementA.html.twig');
     }
 
