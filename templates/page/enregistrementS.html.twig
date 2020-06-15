@@ -107,6 +107,7 @@
                 <td></td>
                 <td></td>
                 <td>
+
                 <style>
                     div.ex1 {
                     background-color: lightgrey;
@@ -122,12 +123,21 @@
                 <br><br>
                 <div class="ex1"><div class="container">
                     <div class="row changingBG">
-                        <div class="col-lg-2">Qualite</div>
-                        <div class="col-lg-3">Nom </div>
-                        <div class="col-lg-3">Prénom</div>
-                        <div class="col-lg-4">Date de Naissance</div>
+                        <div class="col-lg-2"><h4>Qualite</h4></div>
+                        <div class="col-lg-3"><h4>Nom</h4></div>
+                        <div class="col-lg-3"><h4>Prénom</h4></div>
+                        <div class="col-lg-4"><h4>Date de Naissance</h4></div>
                     </div>
                     <!-- Ici nous devrons notez les personnes qui participe aux activités -->
+                    {% for property in property %}
+                            <div class="row changingBG">
+                                <div class="col-lg-2">{{ property.Qualite}}</div>
+                                <div class="col-lg-3">{{ property.Nom}} </div>
+                                <div class="col-lg-3">{{ property.Prenom}}</div>
+                                <div class="col-lg-4">{{ property.datenaissance | date('d-m-y')}}</div>
+                            </div>
+                    {% endfor %}
+
                 </div>
             </td>
             </tbody>
