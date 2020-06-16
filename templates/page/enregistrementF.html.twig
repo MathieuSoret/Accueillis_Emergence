@@ -14,10 +14,9 @@
                     <input list="Nom" id="nom" name="nom" />
 
                     <datalist id="Nom">
-                        <OPTION value="Mathieu">
-                        <OPTION value="Mathis">
-                        <OPTION value="Jean">
-                        <OPTION value="Paul">
+                        {% for property in property %}
+                            <option value=" {{ property.qualite }}&nbsp;{{ property.nom }}&nbsp;{{ property.prenom }}&nbsp;&nbsp;{{ property.datenaissance | date('d/m/yy')}} ">
+                        {% endfor %}
                     </datalist><br><br>
 
                     <br>
@@ -113,8 +112,16 @@
                                 <div class="col-lg-4">Date de Naissance</div>
                                 <div class="col-lg-2">Lien</div>
                             </div>
-                        </div>
+                        </div><br>
                         <!-- Ici nous devrons notez les familles -->
+                        {% for property in property %}
+                                <div class="row changingBG">
+                                    <div class="col-lg-2">{{ property.Qualite}}</div>
+                                    <div class="col-lg-2">{{ property.Nom}} </div>
+                                    <div class="col-lg-2">{{ property.Prenom}}</div>
+                                    <div class="col-lg-4">{{ property.datenaissance | date('d-m-y')}}</div>
+                                </div>
+                        {% endfor %}
                         
                     </div>
 

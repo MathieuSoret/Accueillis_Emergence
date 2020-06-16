@@ -83,19 +83,18 @@
                     <input list="Nom" id="nom" name="nom" />
 
                             <datalist id="Nom">
-                                <OPTION value="Mathieu">
-                                <OPTION value="Mathis">
-                                <OPTION value="Jean">
-                                <OPTION value="Paul">
+                                {% for property in property %}
+                                    <option value="{{ property.nom }}">
+                                {% endfor %}
                             </datalist><br>
 
                     <label>Recherche par Prénom</label><br>
                     <input list="Acceuilli" id="acceuilli" name="acceuilli" />
 
                             <datalist id="Acceuilli">
-                                <OPTION value="Soret">
-                                <OPTION value="Bidul">
-                                <OPTION value="Truc">
+                                {% for property in property %}
+                                    <option value="{{ property.prenom }}">
+                                {% endfor %}
                             </datalist><br><br>
                     <div class="btn-toolbar">
                         <button type="button" class="btn btn-success">valider</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

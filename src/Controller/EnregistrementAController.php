@@ -34,7 +34,7 @@ class EnregistrementAController extends AbstractController
 
     public function index(TAccueillisRepository $repository): Response
     {
-        $property =$this->repository->findBy(array('id' => 2));
+        $property =$this->repository->findAll();
         return $this->render('page/enregistrementA.html.twig', [
             'property' => $property
         ]);
