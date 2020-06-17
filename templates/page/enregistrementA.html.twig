@@ -15,13 +15,14 @@
 
 
       <label>Information de l'accueilli :</label><br>
-      <input list="Information" id="information" name="information" />
+      <input list="Information" id="JSP" name="information" />
 
       <!-- Ici on nous pouvons chercher tous les informations concernant les acceuillis -->
       
         <datalist id="Information">
+        <!-- Ici nous avons le block qui nous permet d'afficher tous les accueillis grâce au property -->
         {% for property in property %}
-            <option value=" {{ property.qualite }}&nbsp;{{ property.nom }}&nbsp;{{ property.prenom }}&nbsp;&nbsp;{{ property.datenaissance | date('d/m/yy')}} ">
+            <option value=" {{ property.qualite }}&nbsp;{{ property.nom }}&nbsp;{{ property.prenom }} ">
         {% endfor %}
         </datalist>
 
@@ -33,7 +34,6 @@
   <tbody>
     <tr>
       <th scope="row">
-
         <label>Genre</label><br>
         <input list="genre" id="Genre" name="Genre" />
 
@@ -41,7 +41,9 @@
            <OPTION value="monsieur">
            <OPTION value="madame">
            <OPTION value="enfant">
-        </datalist>
+        </datalist><br><br>
+
+      
 
       </th>
       <td>
@@ -49,7 +51,8 @@
         <form>
           <div class="form-row">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Nom" name="nom">
+              <p  id="log"><input type="text" class="form-control" placeholder="Nom" name="nom" id="log"></p>
+              
             </div>
           </div>
         </form>
@@ -59,10 +62,11 @@
         <form>
           <div class="form-row">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Prénom" name="prenom">
+            <input type="text" class="form-control" placeholder="Prénom" name="prenom">
             </div>
           </div>
         </form>
+        
       </td>
       <td>
         
@@ -90,6 +94,7 @@
               <tbody>
                 <tr>
                   <td>
+                  <!-- Nous avons un élément qui permet d'afficher et chercher une date -->
                     <label>Date de Naissance :</label><br>
                     <form>
                         <div class="nativeDatePicker">
@@ -144,6 +149,7 @@
                     </form>
                   </td>
                   <td>
+                  <!-- Nous avons une checkbox pour savoir si la personnes est isolée ou non -->
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                       <label class="form-check-label" for="defaultCheck1">
@@ -467,5 +473,22 @@
       </div>
     </div>
 </div>
+<<<<<<< HEAD
       
+=======
+
+      <!-- ici on gére l'affichage d'élément -->
+      <script>
+        const input = document.getElementById('JSP');
+        const log = document.getElementById('log');
+
+        input.addEventListener('change', updateValue);
+
+        function updateValue(e) {
+          log.textContent = e.target.value;
+        }
+      </script>
+
+
+>>>>>>> Acceuillis
 {% endblock %}
