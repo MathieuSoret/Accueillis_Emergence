@@ -16,8 +16,11 @@ use Symfony \Component \Form \Extension \Core \Type \ChoiceType;
 
 class InscriptionType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function register(Request $request)
     {
+        $user = new User();
+
+        $form = $this->createFormBuilder($user);
         $builder
             ->add('Qualite', ChoiceType::class)
             ->add('Nom', TextareaType::class)
@@ -29,13 +32,11 @@ class InscriptionType extends AbstractType
             ->add('Ref_Prescripteur', ChoiceType::class)
             ->add('Isole', CheckboxType::class)
             ->add('Sexe', ChoiceType::class)
+            ->getForm();
         ;
+        return $this->render('page/enregistrementA.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
-
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'data_class' => TAccueillis::class,
-        ]);
-    }
+    
 }

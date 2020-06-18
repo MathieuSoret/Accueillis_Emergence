@@ -3,6 +3,9 @@
 {% block title 'Enregistrement Accueilli' %}
 
 {% block body %}
+
+{{ form_start(form) }}
+
   <div class="container mt-4" >
     <center><h1>Enregistrement</h1></center>
 
@@ -51,8 +54,9 @@
         <form>
           <div class="form-row">
             <div class="col">
-              <p  id="log"><input type="text" class="form-control" placeholder="Nom" name="nom" id="log"></p>
-              
+            {% for property in property %}
+              <p  id="log"><input type="text" class="form-control" value="{{ property.nom }}" placeholder="Nom" name="nom" id="log"></p>
+            {% endfor %}  
             </div>
           </div>
         </form>
@@ -473,9 +477,6 @@
       </div>
     </div>
 </div>
-<<<<<<< HEAD
-      
-=======
 
       <!-- ici on gére l'affichage d'élément -->
       <script>
@@ -489,6 +490,5 @@
         }
       </script>
 
-
->>>>>>> Acceuillis
+{{ form_end(form) }}
 {% endblock %}

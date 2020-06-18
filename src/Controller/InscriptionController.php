@@ -11,7 +11,7 @@ class InscriptionController extends AbstractController
 {
     public function index()
     {
-        return $this->render('page/base.html.twig');
+        return $this->render('page/enregistrementA.html.twig');
     }
 
     public function add()
@@ -19,9 +19,9 @@ class InscriptionController extends AbstractController
         $inscription = new Inscription();
         $form = $this->createForm(ArticleType::class, $inscription);
 
-    	return $this->render('page/enregistrementA.html.twig', [
-            'form' => $form->createView()
-        ]);
+    	return $this->render('page/enregistrementA.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 
 }
