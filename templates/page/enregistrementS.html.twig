@@ -116,9 +116,15 @@
                     }
                 </style>
 
-                <input type="button" onclick='window.location.reload(false)' value="Actualiser la liste de contrôle" class="btn btn-success"/>
+                <input type="button" onclick='window.location.reload(false)' value="Actualiser la liste de contrôle" class="btn btn-success"/><br><br>
                 <label for="tentacles">Nombre de participant  :</label>
-                <input type="number" id="tentacles" name="tentacles" min="0"><br>
+                    <form>
+                        <div class="form-row">
+                            <div class="col">
+                            <p  id="log"><input type="text" class="form-control"  placeholder="Nombre de participant" name="nombre" id="nombre"></p> 
+                            </div>
+                        </div>
+                    </form>
                 <br><br>
                 <div class="ex1"><div class="container">
                     <div class="row changingBG">
@@ -136,6 +142,8 @@
                                 <div class="col-lg-4">{{ property.datenaissance | date('d-m-y')}}</div>
                             </div>
                     {% endfor %}
+
+                  
 
                 </div>
             </td>

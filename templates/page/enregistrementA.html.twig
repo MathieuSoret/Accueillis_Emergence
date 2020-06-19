@@ -4,7 +4,6 @@
 
 {% block body %}
 
-{{ form_start(form) }}
 
   <div class="container mt-4" >
     <center><h1>Enregistrement</h1></center>
@@ -16,19 +15,19 @@
       <th scope="col"></th>
       <th scope="col">
 
-
       <label>Information de l'accueilli :</label><br>
       <input list="Information" id="JSP" name="information" />
 
       <!-- Ici on nous pouvons chercher tous les informations concernant les acceuillis -->
-      
+   
         <datalist id="Information">
         <!-- Ici nous avons le block qui nous permet d'afficher tous les accueillis grâce au property -->
         {% for property in property %}
-            <option value=" {{ property.qualite }}&nbsp;{{ property.nom }}&nbsp;{{ property.prenom }} ">
+          <option value=" {{ property.qualite }}&nbsp;{{ property.nom }}&nbsp;{{ property.prenom }} ">
         {% endfor %}
-        </datalist>
 
+        </datalist>
+        
       </th>
       <th scope="col"><button type="button" class="btn btn-success" href="#">Nouvel accueilli</button></th>
       <th scope="col"></th>
@@ -46,17 +45,13 @@
            <OPTION value="enfant">
         </datalist><br><br>
 
-      
-
       </th>
       <td>
       <label>Nom de l'accueilli :</label><br>
         <form>
           <div class="form-row">
             <div class="col">
-            {% for property in property %}
-              <p  id="log"><input type="text" class="form-control" value="{{ property.nom }}" placeholder="Nom" name="nom" id="log"></p>
-            {% endfor %}  
+              <p  id="log"><input type="text" class="form-control"  placeholder="Nom" name="nom" id="log"></p> 
             </div>
           </div>
         </form>
@@ -66,7 +61,7 @@
         <form>
           <div class="form-row">
             <div class="col">
-            <input type="text" class="form-control" placeholder="Prénom" name="prenom">
+              <input type="text" class="form-control" placeholder="Prénom" name="prenom">
             </div>
           </div>
         </form>
@@ -490,5 +485,5 @@
         }
       </script>
 
-{{ form_end(form) }}
+
 {% endblock %}
