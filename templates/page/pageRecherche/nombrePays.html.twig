@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Recherche par pays" %}
+
+{% block body %}
+<table class="table">
+    <tbody>
+        <td>
+            <div id="texte" class="texte">
+                <datalist id="Nom">
+                    {% for property in property %}
+                        <option value="{{ property.nom }}">
+                    {% endfor %}
+                </datalist>
+            </div>
+        </td>
+    </tbody>
+</table>
+{% endblock %}
