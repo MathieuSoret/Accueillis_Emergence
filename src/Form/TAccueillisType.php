@@ -6,6 +6,7 @@ use App \Entity \TAccueillis;
 use Symfony \Component \Form \AbstractType;
 use Symfony \Component \Form \FormBuilderInterface;
 use Symfony \Component \OptionsResolver \OptionsResolver;
+use Doctrine \Common \Persistence \ObjectManager;
 
 use Symfony \Component \Form \Extension \Core \Type \TextType;
 use Symfony \Component \Form \Extension \Core \Type \TextareaType;
@@ -17,19 +18,25 @@ class TAccueillisType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Qualite', ChoiceType::class)
+            ->add('ID_Accueilli', TextType::class)
+            ->add('Qualite', ChoiceType::class, [
+                'choices' => $this->getChoices()
+            ])
             ->add('Nom', TextType::class)
             ->add('Prenom', TextType::class)
-            ->add('Date_Naissance', ChoiceType::class)
+            ->add('Date_Naissance', DateTimeType::class)
             ->add('Ville_Naissance', TextType::class)
-            ->add('Ref_Nationalite', ChoiceType::class)
-            ->add('Date_Arrivee', ChoiceType::class)
-            ->add('Ref_Prescripteur', ChoiceType::class)
-            ->add('Isole', TextType::class)
-            ->add('Ref_Accueilli_Famille', ChoiceType::class)
-            ->add('Sexe', ChoiceType::class)
-            ->add('Adulte', ChoiceType::class)
-            ->add('actif', TextType::class)
+            ->add('Ref_Nationalite', ChoiceType::class, [
+                'choices' => $this->getPays()
+            ])
+            ->add('Date_Arrivee', DateTimeType::class)
+            ->add('Ref_Prescripteur', ChoiceType::class, [
+                'choices' => $this->getPrescripteur()
+            ])
+            ->add('Sexe', ChoiceType::class, [
+                'choices' => $this->getSexe()
+            ])
+            ->add('Isole', TextareaType::class)
         ;
     }
 
@@ -39,4 +46,45 @@ class TAccueillisType extends AbstractType
             'data_class' => TAccueillis::class,
         ]);
     }
+
+    private function getChoices()
+    {
+        $choices = TAccueillis::QUALITE;
+        $output = [];
+        foreach($choices as $k => $v) {
+            $output[$v] = $k;
+        }
+        return $output;
+    }
+
+    private function getSexe()
+    {
+        $choices = TAccueillis::SEXE;
+        $outputS = [];
+        foreach($choices as $kS => $vS) {
+            $outputS[$vS] = $kS;
+        }
+        return $outputS;
+    }
+
+    private function getPrescripteur()
+    {
+        $choices = TAccueillis::PRESCRIPTEUR;
+        $outputP = [];
+        foreach($choices as $kP => $vP) {
+            $outputP[$vP] = $kP;
+        }
+        return $outputP;
+    }
+
+    private function getPays()
+    {
+        $choices = TAccueillis::PAYS;
+        $outputP = [];
+        foreach($choices as $kP => $vP) {
+            $outputP[$vP] = $kP;
+        }
+        return $outputP;
+    }
+
 }

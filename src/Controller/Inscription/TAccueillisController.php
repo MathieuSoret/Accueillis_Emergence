@@ -33,23 +33,23 @@ class TAccueillisController extends AbstractController
     /**
      * @Route("EnregistrementA", name="page.enregistrementA")
      */
-    //public function new(Request $request)
-    //{
-        //$new = new TAccueillis();
-        //$form = $this->createForm(TAccueillisType::class, $new);
-        //$form->handleRequest($request);
+    public function new(Request $request)
+    {
+        $new = new TAccueillis();
+        $form = $this->createForm(TAccueillisType::class, $new);
+        $form->handleRequest($request);
 
-        //if ($form->isSubmitted() && $form->isValid()) {
-            //$this->em->persist($new);
-            //$this->em->flush();
-            //$this->addFlash('success', 'Bien créé avec succès');
-            //return $this->redirectToRoute('page.enregistrementA');
-        //}
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->persist($new);
+            $this->em->flush();
+            $this->addFlash('success', 'Bien créé avec succès');
+            return $this->redirectToRoute('page.enregistrementA');
+        }
 
-        //return $this->render('page/enregistrementA.html.twig', [
-            //'new' => $new,
-            //'form'     => $form->createView()
-        //]);
-    //}
+        return $this->render('page/enregistrementA.html.twig', [
+            'new' => $new,
+            'form'     => $form->createView()
+        ]);
+    }
 
 }

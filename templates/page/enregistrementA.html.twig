@@ -3,7 +3,7 @@
 {% block title 'Enregistrement Accueilli' %}
 
 {% block body %}
-
+{{ form_start(form) }}
 
   <div class="container mt-4" >
     <center><h1>Enregistrement</h1></center>
@@ -22,12 +22,15 @@
    
         <datalist id="Information">
         <!-- Ici nous avons le block qui nous permet d'afficher tous les accueillis grâce au property -->
-        {% for property in property %}
-          <option value=" {{ property.qualite }}&nbsp;{{ property.nom }}&nbsp;{{ property.prenom }} ">
-        {% endfor %}
+                
 
         </datalist>
-        
+
+
+
+
+
+
       </th>
       <th scope="col"><button type="button" class="btn btn-success" href="#">Nouvel accueilli</button></th>
       <th scope="col"></th>
@@ -37,13 +40,14 @@
     <tr>
       <th scope="row">
         <label>Genre</label><br>
-        <input list="genre" id="Genre" name="Genre" />
+        <div class="col-md-2">{{ form_row(form.Qualite) }}</div>
+        <!--<input list="genre" id="Genre" name="Genre" />
 
         <datalist id="genre">
            <OPTION value="monsieur">
            <OPTION value="madame">
            <OPTION value="enfant">
-        </datalist><br><br>
+        </datalist><br><br>-->
 
       </th>
       <td>
@@ -51,7 +55,7 @@
         <form>
           <div class="form-row">
             <div class="col">
-              <p  id="log"><input type="text" class="form-control"  placeholder="Nom" name="nom" id="log"></p> 
+              <div class="col-md-2">{{ form_row(form.Nom) }}</div><!--<input type="text" class="form-control"  placeholder="Nom" name="nom" id="log"><div class="col-md-2"></div>-->
             </div>
           </div>
         </form>
@@ -61,7 +65,7 @@
         <form>
           <div class="form-row">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Prénom" name="prenom">
+              <div class="col-md-2">{{ form_row(form.Prenom) }}</div><!--<input type="text" class="form-control" placeholder="Prénom" name="prenom">-->
             </div>
           </div>
         </form>
@@ -95,31 +99,34 @@
                   <td>
                   <!-- Nous avons un élément qui permet d'afficher et chercher une date -->
                     <label>Date de Naissance :</label><br>
-                    <form>
+                    <div class="col-md-2">{{ form_row(form.Date_Naissance)}}</div>
+                    <!--<form>
                         <div class="nativeDatePicker">
                              <input type="date" id="bday" name="naissance">
                              <span class="validity"></span>
-                        </div>
+                        </div>-->
                     </form>
                   </td>
                   <td>
                     <label>Ville de naissance :</label>
-                    <form>
+                    <div class="col-md-2">{{ form_row(form.Ville_Naissance) }}</div>
+                    <!-- <form>
                       <div class="form-row">
                         <div class="col">
                           <input type="text" class="form-control" placeholder="Ville" name="villeN">
                         </div>
-                    </form>
+                    </form>-->
                   </td>
                   <td>
 
                     <label>Sexe</label><br>
-                    <input list="Sexe" id="sexe" name="sexe" />
+                    <div class="col-md-2">{{ form_row(form.Sexe) }}</div>
+                    <!--<input list="Sexe" id="sexe" name="sexe" />
 
                     <datalist id="Sexe">
                         <OPTION value="M">
                         <OPTION value="F">
-                    </datalist>
+                    </datalist>-->
 
 
                   </td>
@@ -129,13 +136,14 @@
                 <tr>
                   <td>
                     <label>Nationalité :</label><br>
+                    <div class="col-md-2">{{ form_row(form.Ref_Nationalite) }}</div>
 
-                    <input list="Nationalité" id="nationalité" name="nationalité" />
+                    <!--<input list="Nationalité" id="nationalité" name="nationalité" />
 
                     <datalist id="Nationalité">
                         <option value="France">
                         <option value="Japon">
-                    </datalist>
+                    </datalist>-->
 
                   </td>
                   <td>
@@ -149,12 +157,13 @@
                   </td>
                   <td>
                   <!-- Nous avons une checkbox pour savoir si la personnes est isolée ou non -->
-                    <div class="form-check">
+                  <div class="col-md-2">{{ form_row(form.Isole) }}</div>
+                    <!--<div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                       <label class="form-check-label" for="defaultCheck1">
                         Isolé ?
                       </label>
-                    </div>
+                    </div>-->
                   </td>
                   <td></td>
                 </tr>
@@ -162,16 +171,18 @@
                 <tr>
                   <td>
                     <label>Date d'arrivée en France</label>
-                    <form>
+                    <div class="col-md-4">{{ form_row(form.Date_Arrivee) }}</div>
+                    <!--<form>
                         <div class="nativeDatePicker">
                              <input type="date" id="bday" name="arrivé">
                              <span class="validity"></span>
                         </div>
-                     </form>
+                     </form>-->
                   </td>
                   <td></td>
                   <td>
-                    <button type="button" class="btn btn-success">Valider</button>
+                  
+                    <!--<button type="button" class="btn btn-success">Valider</button>-->
                   </td>
                   <td></td>
                 </tr>
@@ -179,8 +190,9 @@
                 <tr>
                   <td>
                     <label>Prescripteur</label><br>
+                    <div class="col-md-2">{{ form_row(form.Ref_Prescripteur) }}</div>
 
-                    <input list="Prescripteur" id="prescripteur" name="prescripteur" />
+                    <!--<input list="Prescripteur" id="prescripteur" name="prescripteur" />
 
                     <datalist id="Prescripteur">
                         <OPTION value="115">
@@ -191,10 +203,10 @@
                         <OPTION value="Maraude Emergence">
                         <OPTION value="Maraude Partenaire">
                         <OPTION value="Inconnu">
-                    </datalist>
+                    </datalist>-->
 
                   </td>
-                  <td></td>
+                  <td><button class="btn btn-success">{{ button|default('Valider') }}</button></td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -206,7 +218,7 @@
       </div>
 
 
-
+{{ form_end(form) }}
 
 
       <!-- ici nous avons le collapse qui va nous permettre d'afficher la situation actuelle d'un acceuilli etc.....  -->

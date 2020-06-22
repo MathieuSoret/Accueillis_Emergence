@@ -10,6 +10,34 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TAccueillis
 {
+
+    const QUALITE = [
+        'Monsieur' => 'Monsieur',
+        'Madame' => 'Madame',
+        'Enfant' => 'Enfant'
+    ];
+
+    const SEXE = [
+        0 => 'M',
+        1 => 'F'
+    ];
+
+    const PRESCRIPTEUR = [
+        '1' => 'Connaissance',
+        '2' => '115',
+        '3' => 'CCAS',
+        "4" => "Foyer d'Urgence",
+        "5" => "Maraude Emergence",
+        "6" => "Maraude Partenaire",
+        "7" => "Inconnu"
+    ];
+
+    const PAYS = [
+        'France' => 'France',
+        'Espagne' => 'Espagne',
+        'Japon' => 'Japon'
+    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -48,7 +76,7 @@ class TAccueillis
     private $Ville_Naissance;
 
     /**
-     * @ORM\Column(type="string", length=4, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $Ref_Nationalite;
 
@@ -112,8 +140,13 @@ class TAccueillis
     public function setQualite(?string $Qualite): self
     {
         $this->Qualite = $Qualite;
-
+        
         return $this;
+    }
+
+    public function getQualiteType(): string
+    {
+        return self::QUALITE[$this->Qualite];
     }
 
     public function getNom(): ?string
@@ -176,6 +209,11 @@ class TAccueillis
         return $this;
     }
 
+    public function getRefNationaliteType(): string
+    {
+        return self::PAYS[$this->Ref_Nationalite];
+    }
+
     public function getDateArrivee(): ?\DateTimeInterface
     {
         return $this->Date_Arrivee;
@@ -198,6 +236,11 @@ class TAccueillis
         $this->Ref_Prescripteur = $Ref_Prescripteur;
 
         return $this;
+    }
+
+    public function getRefPrescripteurType(): string
+    {
+        return self::PRESCRIPTEUR[$this->Ref_Prescripteur];
     }
 
     public function getIsole(): ?bool
@@ -234,6 +277,11 @@ class TAccueillis
         $this->Sexe = $Sexe;
 
         return $this;
+    }
+
+    public function getSexeType(): string
+    {
+        return self::SEXE[$this->Sexe];
     }
 
     public function getAdulte(): ?bool
