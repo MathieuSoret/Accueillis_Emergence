@@ -10,6 +10,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TFamilleDetails
 {
+
+    const GENRE = [
+        'Fille' => 'Fille',
+        'Fils' => 'Fils',
+        'Grand-Père' => 'Grand-Père',
+        'Grand-Mère' => 'Grand-Mère',
+        'Membre' => 'Membre',
+        'Père' => 'Père',
+        'Mère' => 'Mère'
+    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -88,5 +99,10 @@ class TFamilleDetails
         $this->Ref_Lien = $Ref_Lien;
 
         return $this;
+    }
+
+    public function getRefLienType(): string
+    {
+        return self::GENRE[$this->Ref_Lien];
     }
 }

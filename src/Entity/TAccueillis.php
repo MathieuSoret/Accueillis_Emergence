@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class TAccueillis
 {
 
+    // Ici on ajoute des valeurs à la datalist
     const QUALITE = [
         'Monsieur' => 'Monsieur',
         'Madame' => 'Madame',
@@ -23,13 +24,14 @@ class TAccueillis
     ];
 
     const PRESCRIPTEUR = [
-        '1' => 'Connaissance',
-        '2' => '115',
-        '3' => 'CCAS',
-        "4" => "Foyer d'Urgence",
-        "5" => "Maraude Emergence",
-        "6" => "Maraude Partenaire",
-        "7" => "Inconnu"
+        '1' => '115',
+        '2' => 'Autre',
+        '3' => 'Connaissance',
+        '4' => 'CCAS',
+        "5" => "Foyer d'Urgence",
+        "6" => "Maraude Emergence",
+        "7" => "Maraude Partenaire",
+        "8" => "Inconnu"
     ];
 
     const PAYS = [

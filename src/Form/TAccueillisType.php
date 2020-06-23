@@ -11,6 +11,7 @@ use Doctrine \Common \Persistence \ObjectManager;
 use Symfony \Component \Form \Extension \Core \Type \TextType;
 use Symfony \Component \Form \Extension \Core \Type \TextareaType;
 use Symfony \Component \Form \Extension \Core \Type \DateTimeType;
+use Symfony \Component \Form \Extension \Core \Type \DateType;
 use Symfony \Component \Form \Extension \Core \Type \ChoiceType;
 
 class TAccueillisType extends AbstractType
@@ -18,25 +19,44 @@ class TAccueillisType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('ID_Accueilli', TextType::class)
+            ->add('ID_Accueilli', TextType::class, array(
+                'label' => ' ',
+            ))
             ->add('Qualite', ChoiceType::class, [
                 'choices' => $this->getChoices()
             ])
-            ->add('Nom', TextType::class)
-            ->add('Prenom', TextType::class)
-            ->add('Date_Naissance', DateTimeType::class)
-            ->add('Ville_Naissance', TextType::class)
+            ->add('Nom', TextType::class, array(
+                'label' => ' ',
+            ))
+            ->add('Prenom', TextType::class, array(
+                'label' => ' ',
+            ))
+            ->add('Date_Naissance', DateType::class, array(
+                'years' => range(date('Y')-110, date('Y')),
+                'label' => ' ',
+            ))
+            ->add('Ville_Naissance', TextType::class, array(
+                'label' => ' ',
+            ))
             ->add('Ref_Nationalite', ChoiceType::class, [
-                'choices' => $this->getPays()
+                'choices' => $this->getPays(),
+                'label' => ' ',
             ])
-            ->add('Date_Arrivee', DateTimeType::class)
+            ->add('Date_Arrivee', DateType::class, array(
+                'years' => range(date('Y')-110, date('Y')),
+                'label' => ' ',
+            ))
             ->add('Ref_Prescripteur', ChoiceType::class, [
-                'choices' => $this->getPrescripteur()
+                'choices' => $this->getPrescripteur(),
+                'label' => ' ',
             ])
             ->add('Sexe', ChoiceType::class, [
-                'choices' => $this->getSexe()
+                'choices' => $this->getSexe(),
+                'label' => ' ',
             ])
-            ->add('Isole', TextareaType::class)
+            ->add('Isole', TextareaType::class, array(
+                'label' => ' ',
+            ))
         ;
     }
 

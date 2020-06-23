@@ -3,6 +3,9 @@
 {% block title "Enregistrement d'une famille" %}
 
 {% block body %}
+
+{{ form_start(fam) }}
+
   <div class="container mt-4" >
     <center><h1>Enregistrement d'une famille</h1></center>
     <br><br>
@@ -11,16 +14,17 @@
             <tr>
                 <th scope="col">
                     
-                    <input list="Nom" id="nom" name="nom" />
+                    <!--<input list="Nom" id="nom" name="nom" />
 
                     <datalist id="Nom">
-                        {% for property in property %}
-                            <option value=" {{ property.qualite }}&nbsp;{{ property.nom }}&nbsp;{{ property.prenom }}&nbsp;&nbsp;{{ property.datenaissance | date('d/m/yy')}} ">
-                        {% endfor %}
-                    </datalist><br><br>
+                        
+                    </datalist><br><br>-->
+                    {{ form_row(famd.ID_Famille) }}
 
+                    
+                    
                     <br>
-                    <button type="button" class="btn btn-success"><a href=""><font color="white">Nouvelle Famille</font></button>
+                    <button class="btn btn-success">{{ button|default('Nouvelle Famille') }}</button>
                 </th>
                 <th scope="col">
                     <label> Une famille est repérée par le nom d'un de ses membres.</label>
@@ -76,6 +80,8 @@
                         <OPTION value="Père">
                     </datalist><br><br>
 
+                    
+
                     <label>Si le nom du nouveau membre est introuvable</label><br>
                     <label>Cliquer sur Annuler</label><br>
                     <label>Cliquer sur Saisir nouvel Accueilli</label><br><br>
@@ -114,14 +120,7 @@
                             </div>
                         </div><br>
                         <!-- Ici nous devrons notez les familles -->
-                        {% for property in property %}
-                                <div class="row changingBG">
-                                    <div class="col-lg-2">{{ property.Qualite}}</div>
-                                    <div class="col-lg-2">{{ property.Nom}} </div>
-                                    <div class="col-lg-2">{{ property.Prenom}}</div>
-                                    <div class="col-lg-4">{{ property.datenaissance | date('d-m-y')}}</div>
-                                </div>
-                        {% endfor %}
+                        
                         
                     </div>
 
@@ -134,5 +133,7 @@
 
 
   </div>
-      
+
+{{ form_end(fam) }}
+
 {% endblock %}
