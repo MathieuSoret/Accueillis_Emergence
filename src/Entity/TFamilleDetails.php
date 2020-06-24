@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TFamilleDetails
 {
+    const ACCUEILLIS = [
+        'Mathieu' => 'Mathieu'
+    ];
 
     const GENRE = [
         'Fille' => 'Fille',
@@ -87,6 +90,11 @@ class TFamilleDetails
         $this->Ref_Accueilli = $Ref_Accueilli;
 
         return $this;
+    }
+
+    public function getRefAccueilliType(): string
+    {
+        return self::ACCUEILLIS[$this->Ref_Accueilli];
     }
 
     public function getRefLien(): ?string

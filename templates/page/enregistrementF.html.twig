@@ -4,7 +4,8 @@
 
 {% block body %}
 
-{{ form_start(fam) }}
+
+{{ form_start(famd) }}
 
   <div class="container mt-4" >
     <center><h1>Enregistrement d'une famille</h1></center>
@@ -14,17 +15,18 @@
             <tr>
                 <th scope="col">
                     
-                    <!--<input list="Nom" id="nom" name="nom" />
+                    <input list="Nom" id="nom" name="nom" />
 
                     <datalist id="Nom">
-                        
-                    </datalist><br><br>-->
-                    {{ form_row(famd.ID_Famille) }}
+                        <option value="SORET">
+                    </datalist><br><br>
+
 
                     
-                    
                     <br>
-                    <button class="btn btn-success">{{ button|default('Nouvelle Famille') }}</button>
+                    <button type="button" class="btn btn-success"><a href="{{ path('page.pageInscription.enregistrementFamille') }}"><font color="white">Nouvelle Famille</font></a></button>
+
+                    
                 </th>
                 <th scope="col">
                     <label> Une famille est repérée par le nom d'un de ses membres.</label>
@@ -57,20 +59,22 @@
 
                     <label>Nom/Prenom de l'accueilli</label><br>
 
-                    <input list="Accueilli" id="accueilli" name="accueilli" />
+                    <!--<input list="Accueilli" id="accueilli" name="accueilli" />
 
                     <datalist id="Accueilli">
                         <OPTION value="Mathieu">
                         <OPTION value="Mathis">
                         <OPTION value="Jean">
                         <OPTION value="Paul">
-                    </datalist><br><br>
+                    </datalist><br><br>-->
+
+                    {{ form_row(famd.Ref_Accueilli)}}
 
 
                     <label>Genre</label><br>
-                    <input list="Genre" id="genre" name="genre" />
+                    <!--<input list="Genre" id="genre" name="genre" />-->
 
-                    <datalist id="Genre">
+                    <!--<datalist id="Genre">
                         <OPTION value="Fille">
                         <OPTION value="Fils">
                         <OPTION value="Grand-mère">
@@ -78,15 +82,16 @@
                         <OPTION value="Membre">
                         <OPTION value="Mère">
                         <OPTION value="Père">
-                    </datalist><br><br>
-
+                    </datalist><br><br>-->
+                    
+                    {{ form_row(famd.Ref_Lien)}}<br>
                     
 
                     <label>Si le nom du nouveau membre est introuvable</label><br>
                     <label>Cliquer sur Annuler</label><br>
                     <label>Cliquer sur Saisir nouvel Accueilli</label><br><br>
                     <button type="button" class="btn btn-warning">Annuler</button>
-                    <button type="button" class="btn btn-success">Valider</button>
+                    <button type="button" class="btn btn-success">{{ button|default('Valider') }}</button>
 
                 </th>
 
@@ -134,6 +139,6 @@
 
   </div>
 
-{{ form_end(fam) }}
+{{ form_end(famd) }}
 
 {% endblock %}

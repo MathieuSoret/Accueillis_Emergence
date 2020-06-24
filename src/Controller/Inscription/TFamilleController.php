@@ -7,6 +7,10 @@ use App \Entity \TFamille;
 use App \Form \TFamilleType;
 use App \Repository \TFamilleRepository;
 
+use App \Entity \TFamilleDetails;
+use App \Form \TFamilleDetailType;
+use App \Repository \TFamilleDetailsRepository;
+
 use Doctrine \ORM \EntityManagerInterface;
 
 use Symfony \Component \HttpFoundation \Request;
@@ -26,10 +30,24 @@ class TFamilleController extends AbstractController
      */
     private $em;
 
-    public function __construct(TFamilleRepository $repository, EntityManagerInterface $em)
+
+    /**
+     * @var TFamilleDetailsRepository
+     */
+    private $repositoryd;
+
+    /**
+     * @var EntityManagerInterface
+     */
+    private $emd;
+
+    public function __construct(TFamilleRepository $repository, EntityManagerInterface $em, TFamilleDetailsRepository $repositoryd, EntityManagerInterface $emd)
     {
         $this->repository = $repository;
         $this->em = $em;
+
+        $this->repositoryd = $repositoryd;
+        $this->emd = $emd;
     }
 
     /**
@@ -37,20 +55,22 @@ class TFamilleController extends AbstractController
      */
     public function new(Request $request)
     {
-        $new = new TFamille();
-        $fam = $this->createForm(TFamilleType::class, $new);
-        $fam->handleRequest($request);
 
-        if ($fam->isSubmitted() && $fam->isValid()) {
-            $this->em->persist($new);
-            $this->em->flush();
+        $newd = new TFamilleDetails();
+        $famd = $this->createForm(TFamilleDetailType::class, $newd);
+        $famd->handleRequest($request);
+
+        if ($famd->isSubmitted() && $famd->isValid()) {
+            $this->emd->persist($newd);
+            $this->emd->flush();
             $this->addFlash('success', 'Bien créé avec succès');
             return $this->redirectToRoute('page.enregistrementF');
         }
 
         return $this->render('page/enregistrementF.html.twig', [
-            'new' => $new,
-            'fam' => $fam->createView()
+            
+            'new' => $newd,
+            'famd' => $famd->createView()
         ]);
     }
 
