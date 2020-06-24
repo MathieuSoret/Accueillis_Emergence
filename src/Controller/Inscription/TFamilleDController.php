@@ -37,21 +37,19 @@ class TFamilleDController extends AbstractController
      */
     public function new(Request $request)
     {
-
         $new = new TFamille();
         $fam = $this->createForm(TFamilleType::class, $new);
         $fam->handleRequest($request);
 
         if ($fam->isSubmitted() && $fam->isValid()) {
-            $this->emd->persist($new);
-            $this->emd->flush();
+            $this->em->persist($new);
+            $this->em->flush();
             $this->addFlash('success', 'Bien créé avec succès');
             return $this->redirectToRoute('page.pageInscription.enregistrementFamille');
         }
 
         return $this->render('page/pageInscription/enregistrementFamille.html.twig', [
-            
-            'new' => $newd,
+            'new' => $new,
             'fam' => $fam->createView()
         ]);
     }
