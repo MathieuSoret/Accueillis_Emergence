@@ -16,11 +16,10 @@
                 <th scope="col">
                     
                     <input list="Nom" id="nom" name="nom" />
-
+                    
                     <datalist id="Nom">
-                        <option value="SORET">
                     </datalist><br><br>
-
+                    
 
                     
                     <br>
@@ -91,7 +90,7 @@
                     <label>Cliquer sur Annuler</label><br>
                     <label>Cliquer sur Saisir nouvel Accueilli</label><br><br>
                     <button type="button" class="btn btn-warning">Annuler</button>
-                    <button type="button" class="btn btn-success">{{ button|default('Valider') }}</button>
+                    <button class="btn btn-success">{{ button|default('Valider') }}</button>
 
                 </th>
 

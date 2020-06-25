@@ -20,10 +20,14 @@
                     <datalist id="Nom">
                         
                     </datalist><br><br>-->
-
-                    
+                    <div style="text-align: right;">
+                        {{ form_row(fam.ID_Famille)}}<br>
+                        {{ form_row(fam.Famille)}}
+                    </div>
+                </th>
+                <th>
                     <br>
-                    <button type="button" class="btn btn-success">Nouvelle Famille</button><br><br>
+                    <button class="btn btn-success">{{ button|default('Nouvelle Famille') }}</button><br><br>
                     <button type="button" class="btn btn-danger"><a href="{{ path('page.enregistrementF') }}"><font color="white">Retour</font></a></button>
                 </th>
                 <th scope="col">
@@ -56,22 +60,22 @@
 
                     <label>Nom/Prenom de l'accueilli</label><br>
 
-                    <!--<input list="Accueilli" id="accueilli" name="accueilli" />
+                    <input list="Accueilli" id="accueilli" name="accueilli" />
 
                     <datalist id="Accueilli">
                         <OPTION value="Mathieu">
                         <OPTION value="Mathis">
                         <OPTION value="Jean">
                         <OPTION value="Paul">
-                    </datalist><br><br>-->
+                    </datalist><br><br>
 
                 
 
 
                     <label>Genre</label><br>
-                    <!--<input list="Genre" id="genre" name="genre" />-->
+                    <input list="Genre" id="genre" name="genre" />
 
-                    <!--<datalist id="Genre">
+                    <datalist id="Genre">
                         <OPTION value="Fille">
                         <OPTION value="Fils">
                         <OPTION value="Grand-mère">
@@ -79,7 +83,7 @@
                         <OPTION value="Membre">
                         <OPTION value="Mère">
                         <OPTION value="Père">
-                    </datalist><br><br>-->
+                    </datalist><br><br>
                     
                    <br>
                     
@@ -87,7 +91,6 @@
                     <label>Si le nom du nouveau membre est introuvable</label><br>
                     <label>Cliquer sur Annuler</label><br>
                     <label>Cliquer sur Saisir nouvel Accueilli</label><br><br>
-                    <button type="button" class="btn btn-warning">Annuler</button>
                     <button type="button" class="btn btn-success">{{ button|default('Valider') }}</button>
 
                 </th>
@@ -95,11 +98,6 @@
 
 
                 <td>
-                    <label for="tentacles">Adultes:</label>
-                    <input type="number" id="tentacles" name="tentacles" min="0"><br>
-
-                    <label for="tentacles">Enfants:</label>
-                    <input type="number" id="tentacles" name="tentacles"min="0"><br>
 
                     <input type="button" onclick='window.location.reload(false)' value="Actualiser" class="btn btn-success"/><br>
                     <style>

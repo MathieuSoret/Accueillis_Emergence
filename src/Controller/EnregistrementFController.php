@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App \Entity \TAccueillis;
 use App \Repository \TAccueillisRepository;
+use App \Repository \TFamilleRepository;
 use Doctrine \ORM \EntityManagerInterface;
 use Symfony \Bundle \FrameworkBundle \Controller \AbstractController;
 use Symfony \ Component \HttpFoundation \Response;
@@ -13,16 +14,22 @@ class EnregistrementFController extends AbstractController
     /**
      * @var TAccueillisRepository
      */
-    private $repository;
+    private $repository;    
+    
+    /**
+     * @var TFamilleRepository
+     */
+    private $familly;
 
     /**
      * @var EntityManagerInterface
      */
     private $em;
 
-    public function __construct(TAccueillisRepository $repository, EntityManagerInterface $em)
+    public function __construct(TAccueillisRepository $repository, EntityManagerInterface $em, TFamilleRepository $familly)
     {
         $this->repository = $repository;
+        $this->familly = $familly;
         $this->em = $em;
     }
 
@@ -39,5 +46,18 @@ class EnregistrementFController extends AbstractController
             'property' => $property
         ]);
     }
+
+    /**
+     * @Route("/Enregistrement Famille", name="page.enregistrementF")
+     * @param TFamilleRepository $familly
+     * @return Response
+     */
+    //public function famille(): Response
+    //{
+        //$property = $this->familly->findAll();
+        //return $this->render('page/enregistrementF.html.twig', [
+            //'property' => $property
+        //]);
+    //}
 
 }

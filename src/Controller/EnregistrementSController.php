@@ -38,7 +38,6 @@ class EnregistrementSController extends AbstractController
     /**
      * @Route("/Enregistrement Session", name="page.enregistrementS")
      * @param TAccueillisRepository $repository
-     * @param TSessionDetailsRepository $session
      * @return Response
      */
     public function accueilli(): Response

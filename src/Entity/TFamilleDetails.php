@@ -11,17 +11,17 @@ use Doctrine\ORM\Mapping as ORM;
 class TFamilleDetails
 {
     const ACCUEILLIS = [
-        'Mathieu' => 'Mathieu'
+        0 => 'Mathieu'
     ];
 
     const GENRE = [
-        'Fille' => 'Fille',
-        'Fils' => 'Fils',
-        'Grand-Père' => 'Grand-Père',
-        'Grand-Mère' => 'Grand-Mère',
-        'Membre' => 'Membre',
-        'Père' => 'Père',
-        'Mère' => 'Mère'
+        1 => 'Fille',
+        2 => 'Fils',
+        3 => 'Grand-Père',
+        4 => 'Grand-Mère',
+        5 => 'Membre',
+        6 => 'Père',
+        7 => 'Mère'
     ];
 
     /**
