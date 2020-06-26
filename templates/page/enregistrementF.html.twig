@@ -41,7 +41,8 @@
                 <td> 
                 </td>
                 <td> 
-                    <button class="btn btn-success">Editer</button>
+                    <!-- Ici le bouton permet d'acceder a la page de modification de la famille -->
+                    <button class="btn btn-success"><a href="{{ path('page.pageEditFamille.editFamille', {id: property.id}) }}"><font color="white">Editer</font></a></button>
                 </td>
                 <td>
                 <!-- Ici le bouton permet de supprimer une famille -->
