@@ -40,6 +40,11 @@ class TAccueillis
         'Japon' => 'Japon'
     ];
 
+    const ISOLE = [
+        0 => 'Non',
+        1 => 'Oui'
+    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
