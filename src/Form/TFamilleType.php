@@ -14,8 +14,8 @@ class TFamilleType extends AbstractType
         $builder
             ->add('ID_Famille')
             ->add('Famille')
-            //->add('Observation')
-            //->add('diff')
+            ->add('Observation')
+            ->add('diff')
         ;
     }
 
