@@ -14,6 +14,7 @@ class AccueilController extends AbstractController
      * @return Response
      */
 
+    // Lien vers la page d'accueil grâce à un bouton de la navbar
     public function index(): Response
     {
         return $this->render('page/accueil.html.twig');

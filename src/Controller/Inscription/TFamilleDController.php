@@ -35,6 +35,8 @@ class TFamilleDController extends AbstractController
     /**
      * @Route("EnregistrementFamille", name="page.pageInscription.enregistrementFamille")
      */
+
+     // Ici on ajoute les valeurs à la base de données
     public function new(Request $request)
     {
         $new = new TFamille();

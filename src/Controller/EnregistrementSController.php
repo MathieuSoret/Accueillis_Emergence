@@ -40,6 +40,8 @@ class EnregistrementSController extends AbstractController
      * @param TAccueillisRepository $repository
      * @return Response
      */
+    
+    // Permet de récupérer les informations de la table TAcueillis pour les utiliser sur la page enregistrementS
     public function accueilli(): Response
     {
         $property = $this->repository->findAll();

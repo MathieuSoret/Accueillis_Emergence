@@ -34,6 +34,8 @@ class NombrePaysController extends AbstractController
      * @param TAccueillisRepository $repository
      * @return Response
      */
+
+    // Permet de récupérer les informations de la table TAcueillis pour les utiliser sur la page nombrePays
     public function index(): Response
     {
         $property = $this->repository->findAll();

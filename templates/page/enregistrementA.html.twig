@@ -22,14 +22,8 @@
    
         <datalist id="Information">
         <!-- Ici nous avons le block qui nous permet d'afficher tous les accueillis grâce au property -->
-                
 
         </datalist>
-
-
-
-
-
 
       </th>
       <th scope="col"><button type="button" class="btn btn-success" href="#">Nouvel accueilli</button></th>
@@ -40,22 +34,16 @@
     <tr>
       <th scope="row">
         <label>Genre</label><br>
+        <!-- Ici on affiche le genre des accueillis -->
         <div class="col-md-2">{{ form_row(form.Qualite) }}</div>
-        <!--<input list="genre" id="Genre" name="Genre" />
-
-        <datalist id="genre">
-           <OPTION value="monsieur">
-           <OPTION value="madame">
-           <OPTION value="enfant">
-        </datalist><br><br>-->
-
       </th>
       <td>
       <label>Nom de l'accueilli :</label><br>
         <form>
           <div class="form-row">
             <div class="col">
-              <div class="col-md-2">{{ form_row(form.Nom) }}</div> <!--<input type="text" class="form-control"  placeholder="Nom" name="nom" id="log"><div class="col-md-2"></div>-->
+              <!-- Ici on rentre le nom de l'accueilli -->
+              <div class="col-md-2">{{ form_row(form.Nom) }}</div>
             </div>
           </div>
         </form>
@@ -65,7 +53,8 @@
         <form>
           <div class="form-row">
             <div class="col">
-              <div class="col-md-2">{{ form_row(form.Prenom) }}</div><!--<input type="text" class="form-control" placeholder="Prénom" name="prenom">-->
+              <!-- Ici on rentre le prenom de l'accueilli -->
+              <div class="col-md-2">{{ form_row(form.Prenom) }}</div>
             </div>
           </div>
         </form>
@@ -99,36 +88,19 @@
                   <td>
                   <!-- Nous avons un élément qui permet d'afficher et chercher une date -->
                     <label>Date de Naissance :</label><br>
+                    <!-- Ici on rentre la date de naissance de l'accueilli -->
                     <div class="col-md-2">{{ form_row(form.Date_Naissance)}}</div>
-                    <!--<form>
-                        <div class="nativeDatePicker">
-                             <input type="date" id="bday" name="naissance">
-                             <span class="validity"></span>
-                        </div>-->
                     </form>
                   </td>
                   <td>
                     <label>Ville de naissance :</label>
+                    <!-- Ici on rentre le nom de la ville de l'accueilli -->
                     <div class="col-md-2">{{ form_row(form.Ville_Naissance) }}</div>
-                    <!-- <form>
-                      <div class="form-row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Ville" name="villeN">
-                        </div>
-                    </form>-->
                   </td>
                   <td>
-
                     <label>Sexe</label><br>
+                    <!-- Ici on choix le sexe de l'accueilli -->
                     <div class="col-md-2">{{ form_row(form.Sexe) }}</div>
-                    <!--<input list="Sexe" id="sexe" name="sexe" />
-
-                    <datalist id="Sexe">
-                        <OPTION value="M">
-                        <OPTION value="F">
-                    </datalist>-->
-
-
                   </td>
                   <td></td>
                 </tr>
@@ -136,15 +108,8 @@
                 <tr>
                   <td>
                     <label>Nationalité :</label><br>
+                    <!-- Ici on choisi la nationalité de l'accueilli -->
                     <div class="col-md-2">{{ form_row(form.Ref_Nationalite) }}</div>
-
-                    <!--<input list="Nationalité" id="nationalité" name="nationalité" />
-
-                    <datalist id="Nationalité">
-                        <option value="France">
-                        <option value="Japon">
-                    </datalist>-->
-
                   </td>
                   <td>
                     <label>Age de l'accueilli:</label>
@@ -156,14 +121,8 @@
                     </form>
                   </td>
                   <td>
-                  <!-- Nous avons une checkbox pour savoir si la personnes est isolée ou non -->
-                  <div class="col-md-2">{{ form_row(form.Isole) }}</div>
-                    <!--<div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Isolé ?
-                      </label>
-                    </div>-->
+                    <!-- Ici on regarde si l'accueilli est isolé -->
+                    <div class="col-md-2">{{ form_row(form.Isole) }}</div>
                   </td>
                   <td></td>
                 </tr>
@@ -171,18 +130,11 @@
                 <tr>
                   <td>
                     <label>Date d'arrivée en France</label>
+                    <!-- Ici on rentre la date d'arrivée de l'accueilli -->
                     <div class="col-md-4">{{ form_row(form.Date_Arrivee) }}</div>
-                    <!--<form>
-                        <div class="nativeDatePicker">
-                             <input type="date" id="bday" name="arrivé">
-                             <span class="validity"></span>
-                        </div>
-                     </form>-->
                   </td>
                   <td></td>
                   <td>
-                  
-                    <!--<button type="button" class="btn btn-success">Valider</button>-->
                   </td>
                   <td></td>
                 </tr>
@@ -190,22 +142,10 @@
                 <tr>
                   <td>
                     <label>Prescripteur</label><br>
+                    <!-- Ici on choisi le perscripteur -->
                     <div class="col-md-2">{{ form_row(form.Ref_Prescripteur) }}</div>
-
-                    <!--<input list="Prescripteur" id="prescripteur" name="prescripteur" />
-
-                    <datalist id="Prescripteur">
-                        <OPTION value="115">
-                        <OPTION value="Autre">
-                        <OPTION value="CCAS">
-                        <OPTION value="Connaissance">
-                        <OPTION value="Foyer d'Urgence">
-                        <OPTION value="Maraude Emergence">
-                        <OPTION value="Maraude Partenaire">
-                        <OPTION value="Inconnu">
-                    </datalist>-->
-
                   </td>
+                  <!-- Le bouton permet de valider les informations ajoutés -->
                   <td><button class="btn btn-success">{{ button|default('Valider') }}</button></td>
                   <td></td>
                   <td></td>
@@ -216,7 +156,6 @@
           </div>
         </div>
       </div>
-
 
 {{ form_end(form) }}
 
@@ -417,8 +356,7 @@
                             </div>
                           </form>
                         </div>
-                    
-                      
+
                   </td>
                   <td>
                     <div class="form-group">

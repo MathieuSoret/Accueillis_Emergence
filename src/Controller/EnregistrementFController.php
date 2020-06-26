@@ -4,9 +4,11 @@ namespace App\Controller;
 use App \Entity \TAccueillis;
 use App \Repository \TAccueillisRepository;
 use App \Repository \TFamilleRepository;
+use App \Entity \TFamille;
 use Doctrine \ORM \EntityManagerInterface;
 use Symfony \Bundle \FrameworkBundle \Controller \AbstractController;
 use Symfony \ Component \HttpFoundation \Response;
+use Symfony \Component \HttpFoundation \Request;
 use Symfony \Component \Routing \Annotation \Route;
 
 class EnregistrementFController extends AbstractController
@@ -39,6 +41,8 @@ class EnregistrementFController extends AbstractController
      * @param TAccueillisRepository $repository
      * @return Response
      */
+
+    // ce lien permet de nous rediriger vers la page enregistrementF grâce à la navbar
     public function index(): Response
     {
         $property =$this->repository->findAll();
@@ -52,12 +56,32 @@ class EnregistrementFController extends AbstractController
      * @param TFamilleRepository $familly
      * @return Response
      */
-    //public function famille(): Response
-    //{
-        //$property = $this->familly->findAll();
-        //return $this->render('page/enregistrementF.html.twig', [
-            //'property' => $property
-        //]);
-    //}
+
+     // Ici on récupére les informations de la table TFamille
+     
+    public function famille(): Response
+    {
+        $property = $this->familly->findAll();
+        return $this->render('page/enregistrementF.html.twig', [
+            'property' => $property
+        ]);
+    }
+
+    /**
+     * @Route("/page/delete/{id}", name="page.delete", methods="DELETE")
+     * @param TFamille $property
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+
+    // Ici on supprime l'id de la famille
+    public function delete(TFamille $property, Request $request) {
+        if ($this->isCsrfTokenValid('delete' . $property->getId(), $request->get('_token'))) 
+        {
+            $this->em->remove($property);
+            $this->em->flush();
+        }
+        return $this->redirectToRoute('page.enregistrementF');
+    }
 
 }

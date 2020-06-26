@@ -35,6 +35,8 @@ class TAccueillisController extends AbstractController
     /**
      * @Route("EnregistrementA", name="page.enregistrementA")
      */
+
+    // Ici on ajoute les information à la base de données
     public function new(Request $request)
     {
         $new = new TAccueillis();

@@ -20,7 +20,8 @@
                         <th scope="col">
 
                         <label>Activitée</label><br>
-
+                        
+                        <!-- Choix de l'activitée -->
                         <input list="Activitée" id="activitée" name="activitée" />
 
                         <datalist id="Activitée">
@@ -39,6 +40,7 @@
 
                         </th>
                         <th scope="col">
+                        <!-- Permet d'afficher une date -->
                             <form>
                                 <div class="nativeDatePicker">
                                 <label for="bday">Veuillez saisir votre date  :</label><br>
@@ -49,6 +51,7 @@
                             </form>
                         </th>
                         <th scope="col">
+                            <!-- Permet d'afficher et d'enlever les éléments de ma page -->
                             <button type="button" class="btn btn-success">
                                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                                 <link rel="stylesheet" media="all" title="style de la page" href="afficher_cacher_div.css" />
@@ -98,6 +101,7 @@
                             </datalist><br><br>
                     <div class="btn-toolbar">
                         <button type="button" class="btn btn-success">valider</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!-- Ce bouton permet d'aller vers la page enregistrementA -->
                         <button type="button" class="btn btn-success"><a href="{{ path('page.enregistrementA') }}"><font color="white">Nouvel Accueilli</font></a></button>
                     </div>
 
@@ -135,6 +139,7 @@
                     </div>
                     <!-- Ici nous devrons notez les personnes qui participe aux activités -->
                     {% for property in property %}
+                    <!-- permet d'afficher les valeurs de la base de données -->
                             <div class="row changingBG">
                                 <div class="col-lg-2">{{ property.Qualite}}</div>
                                 <div class="col-lg-3">{{ property.Nom}} </div>

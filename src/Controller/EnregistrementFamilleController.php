@@ -32,6 +32,8 @@ class EnregistrementFamilleController extends AbstractController
      * @param TFamilleRepository $repository
      * @return Response
      */
+
+     // Permet de récupérer les informations de la table TFamille pour les utiliser sur la page enregistrementFamille
     public function index(TFamilleRepository $repository): Response
     {
         $property =$this->repository->findAll();
