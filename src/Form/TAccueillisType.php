@@ -54,7 +54,8 @@ class TAccueillisType extends AbstractType
                 'choices' => $this->getSexe(),
                 'label' => ' ',
             ])
-            ->add('Isole', TextareaType::class, array(
+            ->add('Isole', ChoiceType::class, array(
+                'choices' => $this->getIsole(),
                 'label' => ' ',
             ))
         ;
@@ -67,6 +68,7 @@ class TAccueillisType extends AbstractType
         ]);
     }
 
+    //Ici nous ajoutons a la datalist les valeurs de la base de données
     private function getChoices()
     {
         $choices = TAccueillis::QUALITE;
@@ -105,6 +107,16 @@ class TAccueillisType extends AbstractType
             $outputP[$vP] = $kP;
         }
         return $outputP;
+    }
+
+    private function getIsole()
+    {
+        $choices = TAccueillis::ISOLE;
+        $outputS = [];
+        foreach($choices as $kS => $vS) {
+            $outputS[$vS] = $kS;
+        }
+        return $outputS;
     }
 
 }
