@@ -10,10 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TFamilleDetails
 {
-    const ACCUEILLIS = [
-        0 => 'Mathieu'
-    ];
-
     const GENRE = [
         1 => 'Fille',
         2 => 'Fils',
