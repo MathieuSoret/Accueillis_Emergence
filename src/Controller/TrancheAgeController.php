@@ -25,6 +25,9 @@ class TrancheAgeController extends AbstractController
      * @param UserRepository $repository
      * @return Response
      */
+
+     // Permet de récupérer les informations de la table User pour les utiliser sur la page trancheAge
+     // utiliseé au debut pour testé l'utilisation des property et donc a modifier pour récupérer les accueillis
     public function index(): Response
     {
         $property =$this->repository->findAll();

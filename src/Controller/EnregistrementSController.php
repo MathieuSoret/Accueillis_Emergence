@@ -56,6 +56,7 @@ class EnregistrementSController extends AbstractController
      */
     private $session;
 
+    // Permet de récupérer les informations de la table TSessionDetails pour les utiliser sur la page enregistrementS
     public function nombre(): Response
     {
         $dsession = $this->session->findAll();

@@ -25,7 +25,7 @@ class EditTFamilleController extends AbstractController
 
     /**
      * @Route("/Enregistrement Famille", name="page.enregistrementF")
-     * @return \Symfony\Component\HttpFoundation\Responce
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index()
     {
@@ -38,6 +38,8 @@ class EditTFamilleController extends AbstractController
      * @param Property $property
      * @return \Symfony\Component\HttpFoundation\Response
      */
+    
+    //permet d'utiliser le form sur la page editFamille
     public function edit(TFamilleDetails $property)
     {
         $form = $this->createForm(TFamilleDetailType::class, $property);
