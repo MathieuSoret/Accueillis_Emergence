@@ -67,7 +67,6 @@ class TAccueillisType extends AbstractType
         ]);
     }
 
-    //Ici nous ajoutons a la datalist les valeurs de la base de données
     private function getChoices()
     {
         $choices = TAccueillis::QUALITE;
