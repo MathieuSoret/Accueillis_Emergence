@@ -18,10 +18,7 @@ class TFamilleDetailType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Ref_Accueilli', ChoiceType::class, [
-                'choices' => $this->getAccueillis(),
-                'label' => ' '
-            ])
+            ->add('Ref_Accueilli')
             ->add('Ref_Lien', ChoiceType::class, [
                 'choices' => $this->getLien(),
                 'label' => ' '
@@ -44,15 +41,5 @@ class TFamilleDetailType extends AbstractType
             $output[$v] = $k;
         }
         return $output;
-    }
-
-    private function getAccueillis()
-    {
-        $choicesA = TFamilleDetails::ACCUEILLIS;
-        $outputA = [];
-        foreach($choicesA as $kA => $vA) {
-            $outputA[$vA] = $kA;
-        }
-        return $outputA;
     }
 }
