@@ -14,10 +14,12 @@
         <thead>
             <tr>
                 <th scope="col">
-                <!-- Permet d'ajouter des nouvelles amilles à la base de données -->
+                <!-- Permet d'ajouter des nouvelles familles à la base de données -->
                     <div style="text-align: right;">
                         {{ form_row(fam.ID_Famille)}}<br>
-                        {{ form_row(fam.Famille)}}
+                        {{ form_row(fam.Famille)}}<br>
+                        {{ form_row(fam.Observation) }}<br>
+                        {{ form_row(fam.diff) }}
                     </div>
                 </th>
                 <th>
